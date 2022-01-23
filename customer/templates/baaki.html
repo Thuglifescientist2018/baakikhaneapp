@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+{% include 'homepage/components/navbar.html' %}
+<ul style="height: 60vh; overflow-y: scroll;">
+{% for baaki in baakiharu %}
+{% include 'cards/productCard.html' with baaki=baaki %}
+
+{% endfor %}
+</ul>
+{% endblock %}

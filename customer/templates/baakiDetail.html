@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+बाँकी खाको विवरण 
+{% endblock %}
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'customer/baakiDetail.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    {% if baaki.product_image %}
+    <img src="{{baaki.product_image.url}}" alt="बाँकी खाको सामानको फोटो">
+    {% else %}
+    
+    <h1 style="margin: 2rem">यस्को फोटो हालेको छैन  </h1>
+    <p>फोटो हाल्ने ?</p>
+    <a class="btn btn-success" href="{% url 'baakiEdit' baaki.id %}">हाल्ने</a>
+    <a class="btn btn-success" href="{% url 'baakiharu' %}">होश यस्लाई छोड्दिम </a>
+    {% endif %}
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

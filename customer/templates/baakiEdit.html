@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} Edit baaki {% endblock %}
+{% block head %}
+{% load static %}
+{% endblock %}
+
+{% block content %}
+<div id="editBaaki">
+    <div class="container">
+        <form method="POST"> {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-primary">बद्लुम </button>
+        </form>
+    </div>
+
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'nepali_datetime_field/init.js' %}
+"></script>
+{% endblock %}

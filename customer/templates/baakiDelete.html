@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+
+{% block title %} Blog App {% endblock %}
+
+
+{% block content %}
+
+<h3>Are you sure you want to delete the following:</h3>
+<p>{{baaki.sold_product}}</p>
+<a href="{% url 'baakiharu' %}" class="btn btn-secondary">No, Don't</a>
+
+<form method="POST"> {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+</form>
+
+{% endblock %}

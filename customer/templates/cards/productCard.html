@@ -1,0 +1,27 @@
+<div class="col-12 col-md-10 mb-3 mx-auto">
+    <div class="card">
+        <div class="card-body">
+    
+         
+       
+            <h2 class="card-title"> 
+                <a href="{% url 'baakiDetail' baaki.id %}">
+                    {{baaki.sold_product}} </h5>
+
+                </a>
+            <p class="card-text"> 
+                <strong>
+                    रु. {{baaki.product_price}}
+
+
+                </strong>
+        
+            </p>
+            <a href="{% url 'baakiEdit' baaki.id %}" class="btn border-1">यस्लाई बदल्नु  पर्‍यो </a>
+            <a class="btn border-1" href="{% url 'baakiDelete' baaki.id %}">Delete</a>
+            <h4 class="date">{{baaki.miti}}</h4>
+           
+        </div>
+    </div>
+
+</div>

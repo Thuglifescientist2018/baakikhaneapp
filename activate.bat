@@ -1,0 +1,1 @@
+cd baaki && cd Scripts && activate && cd .. && cd ..
