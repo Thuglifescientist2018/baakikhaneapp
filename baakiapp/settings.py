@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'whitenoise',
     'cloudinary',
     'customer',
+    'Total',
 
     'nepali_datetime_field'
 ]

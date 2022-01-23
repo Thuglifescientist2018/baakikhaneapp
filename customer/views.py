@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render, reverse, HttpResponseRedirect
 from .models import CustomerKoBaaki
 from .forms import BaakiLekhneForm
+from Total.models import Total
 
 
 # Create your views here.
@@ -8,9 +9,18 @@ from .forms import BaakiLekhneForm
 
 def customerbaakis(request):
     template_name = "baaki.html"
+
     customerKoBaaki = CustomerKoBaaki.objects.all().order_by("-id")
+    if(len(Total.objects.all()) == 0):
+        Total.objects.create(total_price=0, count=0)
+    total_obj = Total
+    total_obj_first = Total.objects.all().first()
+
+    total_count = total_obj.count
+
     context = {
-        "baakiharu": customerKoBaaki
+        "baakiharu": customerKoBaaki,
+        "total": Total.objects.all().first().total_price
     }
     return render(request, template_name, context)
 
