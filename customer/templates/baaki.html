@@ -5,12 +5,15 @@
 {% endblock %}
 
 {% block content %}
-{% include 'homepage/components/navbar.html' %}
-<h4>Total Price: {{total}}</h4>
-<ul style="height: 60vh; overflow-y: scroll;">
-{% for baaki in baakiharu %}
-{% include 'cards/productCard.html' with baaki=baaki %}
+<section id="baakiharu" class="p-3">
+    {% include 'homepage/components/navbar.html' %}
+    <h4>Total Price: {{total}}</h4>
+    <ul style="height: 60vh; overflow-y: scroll;">
+    {% for baaki in baakiharu %}
+    {% include 'cards/productCard.html' with baaki=baaki %}
+    
+    {% endfor %}
+    </ul>
 
-{% endfor %}
-</ul>
+</section>
 {% endblock %}
