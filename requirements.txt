@@ -1,0 +1,15 @@
+asgiref==3.4.1
+autopep8==1.6.0
+certifi==2021.10.8
+cloudinary==1.28.1
+Django==4.0.1
+django-nepali-datetime-field==0.5
+nepali-datetime==1.0.7
+Pillow==9.0.0
+pycodestyle==2.8.0
+six==1.16.0
+sqlparse==0.4.2
+toml==0.10.2
+tzdata==2021.5
+urllib3==1.26.8
+whitenoise==5.3.0
