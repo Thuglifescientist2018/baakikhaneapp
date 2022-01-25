@@ -10,6 +10,7 @@ from cloudinary.models import CloudinaryField
 class CustomerKoBaaki(models.Model):
     sold_product = models.CharField(max_length=255, blank=False, null=True)
     product_image = CloudinaryField("image")
+    credited_by = models.CharField(blank=False, null=False, max_length=255)
     product_price = models.FloatField(
         blank=False, null=True)
     miti = NepaliDateField(null=True, blank=True)

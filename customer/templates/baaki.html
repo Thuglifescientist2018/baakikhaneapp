@@ -3,11 +3,12 @@
 {% block head %}
 
 {% endblock %}
+{% block title %} बाँकी को लिस्ट  {% endblock %}
 
 {% block content %}
 <section id="baakiharu" class="p-3">
     {% include 'homepage/components/navbar.html' %}
-    <h4>Total Price: {{total}}</h4>
+    <h4>Total Price: {{total | floatformat:2 }}</h4>
     <ul style="height: 60vh; overflow-y: scroll;">
     {% for baaki in baakiharu %}
     {% include 'cards/productCard.html' with baaki=baaki %}

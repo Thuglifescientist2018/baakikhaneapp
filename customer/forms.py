@@ -11,6 +11,7 @@ class BaakiLekhneForm(forms.ModelForm):
             "sold_product": "बेचेको / किनेको सामान ",
             "product_image": "सामान्को फोटो",
             "product_price": "सामान्को दाम",
+            "credited_by": "बाँकी दिने मान्छे",
             "miti": "मिती"
 
         }

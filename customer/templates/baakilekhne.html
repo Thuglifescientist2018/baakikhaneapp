@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
+{% block title %} बाँकी लेख्ने ठाउँँ  {% endblock %}
 {% block head %}
 {% load static %}
+<link rel="stylesheet" href="{% static 'customer/baakiLekhne.css' %}">
 {% endblock %}
 {% block content %}
-<section class="lekhne_thau">
+<section class="lekhne_thau container">
 <form method="POST" class="bg_green p-4" enctype="multipart/form-data"> {% csrf_token %}
 {{form.as_p}}
 <button class="btn btn-primary" type="submit">
-    Baaki lekhau.
+    बाँकी लेखौँ 
 </button>
 </form>
+<a class="btn" href="{% url 'baakiharu' %}">होश नलेख्ने </a>
 </section>
 
 {% endblock %}

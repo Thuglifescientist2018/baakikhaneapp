@@ -2,11 +2,12 @@ from django.shortcuts import get_object_or_404, render, reverse, HttpResponseRed
 from .models import CustomerKoBaaki
 from .forms import BaakiLekhneForm
 from Total.models import Total
+from django.contrib.admin.views.decorators import staff_member_required
 
 
 # Create your views here.
 
-
+@staff_member_required
 def customerbaakis(request):
     template_name = "baaki.html"
     customerKoBaaki = CustomerKoBaaki.objects.all().order_by("-id")
@@ -21,6 +22,7 @@ def customerbaakis(request):
     return render(request, template_name, context)
 
 
+@staff_member_required
 def baakiLekhne(request):
     template_name = "baakilekhne.html"
     lekhne_form = BaakiLekhneForm(request.POST or None, request.FILES or None)
@@ -44,6 +46,7 @@ def baakiLekhne(request):
     return render(request, template_name, context)
 
 
+@staff_member_required
 def baakiEdit(request, id):
 
     template_name = "baakiEdit.html"
@@ -64,6 +67,7 @@ def baakiEdit(request, id):
     return render(request, template_name, context)
 
 
+@staff_member_required
 def baakiDetail(request, id):
     template_name = "baakiDetail.html"
     baaki = get_object_or_404(CustomerKoBaaki, id=id)
@@ -73,6 +77,7 @@ def baakiDetail(request, id):
     return render(request, template_name, context)
 
 
+@staff_member_required
 def baakiDelete(request, id):
     obj = get_object_or_404(CustomerKoBaaki, id=id)
     template_name = "baakiDelete.html"
