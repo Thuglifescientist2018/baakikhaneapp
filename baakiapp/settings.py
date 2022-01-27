@@ -143,9 +143,9 @@ MEDIA_URL = '/media/'
 
 
 cloudinary.config(
-    cloud_name="thuglifescientist",
-    api_key="153192815535414",
-    api_secret="0AS8i0aS_NII8SOgy3R9kiMGSQI"
+    cloud_name="",
+    api_key="",
+    api_secret=""
 )
 LOGOUT_REDIRECT_URL = "/"
 LOGIN_REDIRECT_URL = '/'
