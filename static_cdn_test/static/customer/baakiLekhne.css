@@ -1,0 +1,7 @@
+.lekhne_thau form p input {
+  padding: 0.75rem;
+  width: 100%;
+}
+.lekhne_thau form p label {
+  display: block;
+}

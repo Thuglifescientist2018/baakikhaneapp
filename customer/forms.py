@@ -15,6 +15,7 @@ class BaakiLekhneForm(forms.ModelForm):
             "miti": "मिती"
 
         }
+        exclude = ('user',)
 
     def clean_title(self, *args, **kwargs):
         instance = self.instance

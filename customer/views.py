@@ -1,13 +1,18 @@
-from django.shortcuts import get_object_or_404, render, reverse, HttpResponseRedirect
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, redirect, render, reverse, HttpResponseRedirect
+from django.urls import reverse_lazy
 from .models import CustomerKoBaaki
 from .forms import BaakiLekhneForm
 from Total.models import Total
 from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth import logout
+
+from django.contrib.auth.decorators import user_passes_test
 
 
 # Create your views here.
 
-@staff_member_required
+@user_passes_test(lambda u: u.is_staff, login_url=reverse_lazy('login'))
 def customerbaakis(request):
     template_name = "baaki.html"
     customerKoBaaki = CustomerKoBaaki.objects.all().order_by("-id")
@@ -33,7 +38,10 @@ def baakiLekhne(request):
         total_first = Total.objects.all().first()
         total_first.total_price += form_price
         total_first.save()
-        lekhne_form.save()
+
+        obj = lekhne_form.save(commit=False)
+        obj.user = request.user
+        obj.save()
         return HttpResponseRedirect(reverse("baakiharu"))
 
     # save

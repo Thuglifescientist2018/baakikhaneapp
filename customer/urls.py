@@ -1,6 +1,6 @@
 from django.urls import path
 
-from customer.views import baakiDelete, baakiDetail, customerbaakis, baakiLekhne, baakiEdit
+from customer.views import baakiDelete, baakiDetail, customerbaakis, baakiLekhne, baakiEdit, logout
 
 
 urlpatterns = [

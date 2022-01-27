@@ -147,3 +147,5 @@ cloudinary.config(
     api_key="153192815535414",
     api_secret="0AS8i0aS_NII8SOgy3R9kiMGSQI"
 )
+LOGOUT_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = '/'
